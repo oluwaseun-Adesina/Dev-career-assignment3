@@ -1,40 +1,41 @@
 <%- include('./partials/header') %>
-<h1>Welcome to the home page</h1>
-<form style="width: 26rem;">
-    <!-- Name input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-      <input type="text" id="form4Example1" class="form-control" />
-      <label class="form-label" for="form4Example1">Name</label>
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <form action="/redact" method="post"> <!-- Added form element with action and method attributes -->
+                <h2 class="fw-bold mb-2 text-uppercase">Scable Word</h2>
+                <p class="text-white-50 mb-5">Please enter your sentence and the word you want to scabble </p>
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <!-- <input type="text" id="sentence" class="form-control form-control-lg" name="sentence" /> Added name attribute -->
+                  <textarea id="sentence" class="form-control form-control-lg" name="sentence" rows="4" cols="50"></textarea> <!-- Changed to textarea and adjusted rows and cols -->
+                  <label class="form-label" for="sentence">Sentence to scrabble</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text" id="words" class="form-control form-control-lg" name="words" /> <!-- Added name attribute -->
+                  <label class="form-label" for="words">Word</label>
+                </div>
+
+                <div>
+                  <button type="submit"  class="btn btn-outline-light btn-lg px-5" >Scabble</button> <!-- Changed type to submit -->
+                </div>
+                
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-  
-    <!-- Email input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-      <input type="email" id="form4Example2" class="form-control" />
-      <label class="form-label" for="form4Example2">Email address</label>
-    </div>
-  
-    <!-- Message input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-      <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-      <label class="form-label" for="form4Example3">Message</label>
-    </div>
-  
-    <!-- Checkbox -->
-    <div class="form-check d-flex justify-content-center mb-4">
-      <input
-        class="form-check-input me-2"
-        type="checkbox"
-        value=""
-        id="form4Example4"
-        checked
-      />
-      <label class="form-check-label" for="form4Example4">
-        Send me a copy of this message
-      </label>
-    </div>
-  
-    <!-- Submit button -->
-    <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Send</button>
-  </form>
+  </div>
+</section>
 
 <%- include('./partials/footer') %>
