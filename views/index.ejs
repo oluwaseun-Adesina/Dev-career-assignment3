@@ -1,41 +1,72 @@
 <%- include('./partials/header') %>
 
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
 
-            <div class="mb-md-5 mt-md-4 pb-5">
-              <form action="/redact" method="post"> <!-- Added form element with action and method attributes -->
-                <h2 class="fw-bold mb-2 text-uppercase">Scable Word</h2>
-                <p class="text-white-50 mb-5">Please enter your sentence and the word you want to scabble </p>
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <form action="/redact" method="post"> <!-- Added form element with action and method attributes -->
+                  <h2 class="fw-bold mb-2 text-uppercase">Scable Word</h2>
+                  <p class="text-white-50 mb-5">Please enter your sentence and the word you want to scabble </p>
 
-                <div data-mdb-input-init class="form-outline form-white mb-4">
-                  <!-- <input type="text" id="sentence" class="form-control form-control-lg" name="sentence" /> Added name attribute -->
-                  <textarea id="sentence" class="form-control form-control-lg" name="sentence" rows="4" cols="50"></textarea> <!-- Changed to textarea and adjusted rows and cols -->
-                  <label class="form-label" for="sentence">Sentence to scrabble</label>
-                </div>
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <!-- <input type="text" id="sentence" class="form-control form-control-lg" name="sentence" /> Added name attribute -->
+                    <textarea id="sentence" class="form-control form-control-lg" name="sentence" rows="4"
+                      cols="50"></textarea> <!-- Changed to textarea and adjusted rows and cols -->
+                    <label class="form-label" for="sentence">Sentence to scrabble</label>
+                  </div>
 
-                <div data-mdb-input-init class="form-outline form-white mb-4">
-                  <input type="text" id="words" class="form-control form-control-lg" name="words" /> <!-- Added name attribute -->
-                  <label class="form-label" for="words">Word</label>
-                </div>
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="words" class="form-control form-control-lg" name="words" />
+                    <!-- Added name attribute -->
+                    <label class="form-label" for="words">Words to be redacted (separated by spaces):</label>
+                  </div>
 
-                <div>
-                  <button type="submit"  class="btn btn-outline-light btn-lg px-5" >Scabble</button> <!-- Changed type to submit -->
-                </div>
-                
-              </form>
+                  <p class="text-white-50 mb-5">Choose a replacement:</p>
+
+
+                  <!-- Default radio -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="placeholder" id="asterisks" value="asterisks" />
+                    <label class="form-check-label" for="asterisks">Asterisks</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="placeholder" id="questionMark"
+                      value="questionMark" />
+                    <label class="form-check-label" for="questionMark">Question Mark</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="placeholder" id="dashes" value="dashes" />
+                    <label class="form-check-label" for="dashes">Dashes</label>
+                  </div>
+
+
+                  <!-- Default checked radio
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                      checked />
+                    <label class="form-check-label" for="flexRadioDefault2"> Default checked radio </label>
+                  </div> -->
+
+                  <div>
+                    <button type="submit" class="btn btn-outline-light btn-lg px-5">Scabble</button>
+                    <!-- Changed type to submit -->
+                  </div>
+
+                </form>
+
+              </div>
 
             </div>
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<%- include('./partials/footer') %>
+  <%- include('./partials/footer') %>

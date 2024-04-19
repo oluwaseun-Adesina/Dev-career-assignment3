@@ -21,6 +21,14 @@
                 <label class="form-label" for="redactedContent">Redacted Content</label>
               </div>
 
+              <!-- Display stats -->
+              <div class="mb-4">
+                <p>Words scanned: <%= stats.wordsScanned %></p>
+                <p>Words redacted: <%= stats.wordsRedacted %></p>
+                <p>Characters redacted: <%= stats.charactersRedacted %></p>
+                <p>Time taken: <%= stats.timeTaken %> seconds</p>
+              </div>
+
               <a href="/" class="btn btn-outline-light btn-lg px-5">Back to Form</a>
             </div>
 
@@ -32,3 +40,4 @@
 </section>
 
 <%- include('./partials/footer') %>
+
